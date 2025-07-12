@@ -124,3 +124,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* globals.css */
+.dot-background {
+  background-image: 
+    radial-gradient(rgba(0, 0, 0, 0.268) 1px, transparent 0),
+    radial-gradient(rgba(0, 0, 0, 0) 1px, transparent 0);
+  background-position: 0 0, 12px 12px;
+  background-size: 30px 30px;
+}
