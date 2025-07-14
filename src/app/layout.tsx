@@ -25,12 +25,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head className="fixed top-0 w-full h-[80px] bg-[#FCFBFA80] backdrop-blur-xl flex items-center justify-between z-50 px-20">
-        <Navbar />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div>
+          <Navbar />
+        </div>
         {children}
       </body>
     </html>
