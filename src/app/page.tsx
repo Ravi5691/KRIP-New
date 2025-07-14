@@ -1,4 +1,3 @@
-import Image from "next/image";
 "use client";
 import LandingPage from "./Home/page";
 import SmoothScrollWrapper from "./(components)/smoothScroll";
