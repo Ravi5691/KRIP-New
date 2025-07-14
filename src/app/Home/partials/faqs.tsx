@@ -22,7 +22,7 @@ export default function FAQs() {
                     <span className="text-[28px]">Got Question?</span>
                     <div className="shadow-[0_0_10px_rgba(0,0,0,0.2)] flex w-4/5  mt-5 py-2 rounded-sm px-4 gap-5">
                     <input type="text" placeholder="Send your question" className="w-full   text-sm  outline-none" />
-                    <button className="bg-[#2C2C2C] text-white rounded-sm p-2">
+                    <button className="bg-[#FB5711] text-white rounded-sm p-2">
                         <ArrowRight className="size-[15px]"/>
                     </button>
                     </div>

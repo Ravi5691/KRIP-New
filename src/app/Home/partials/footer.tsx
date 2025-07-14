@@ -1,41 +1,59 @@
-// components/Footer.tsx
 "use client";
+
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, X } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111620] text-white px-6 md:px-12 py-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {/* Logo + Footer Links */}
-        <div className="space-y-6">
-          {/* Logo (replace with your Image or SVG) */}
-          <div>
-            <Image src="/logo.svg" alt="Logo" width={40} height={40} />
-          </div>
-          <div className="grid grid-cols-2 gap-6 text-sm text-gray-300">
-            <div className="space-y-2">
-              <p className="hover:text-white cursor-pointer">Footer Link</p>
-              <p className="hover:text-white cursor-pointer">Footer Link</p>
-            </div>
-            <div className="space-y-2">
-              <p className="hover:text-white cursor-pointer">Footer Link</p>
-              <p className="hover:text-white cursor-pointer">Footer Link</p>
-            </div>
+    <footer className="bg-[#0E121A] text-white px-6 md:px-20 py-12">
+      <div className="flex flex-col md:flex-row justify-between gap-12">
+
+        {/* Left Column */}
+        <div className="flex flex-col gap-6 max-w-md">
+          <Image src="/logo.svg" alt="Logo" width={40} height={40} />
+          <p className="text-white font-medium text-base leading-relaxed">
+            Get early AI drops, execution hacks, and Krivisio updates — no spam.
+          </p>
+
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Send your question"
+              className="bg-[#1F232B] text-white placeholder:text-gray-400 px-5 py-3 pr-12 rounded-md w-full outline-none"
+            />
+            <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#FF5A1F] hover:bg-[#e74e16] text-white p-2 rounded-md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21.75 6.75L12 15.75L2.25 6.75"
+                />
+              </svg>
+            </button>
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="md:col-span-2 flex flex-col md:flex-row md:justify-between md:items-center">
-          <div className="mb-6 md:mb-0 max-w-md text-lg font-medium">
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-          </div>
-          <div className="flex gap-3">
-            <Button className="bg-[#FF5A1F] hover:bg-[#e74e16] text-white">
+        {/* Right Column */}
+        <div className="flex flex-col justify-between gap-6 max-w-md">
+          <h2 className="text-2xl md:text-[28px] font-bold leading-snug text-white text-right">
+            Ready to stop planning and <br /> start executing?
+          </h2>
+          <div className="flex gap-4 justify-end">
+            <Button className="bg-[#FF5A1F] hover:bg-[#e74e16] text-white px-6">
               Get Started
             </Button>
-            <Button variant="outline" className="border-white text-white">
+            <Button
+              variant="outline"
+              className="border-white  text-white px-6 bg-transparent"
+            >
               Get Demo
             </Button>
           </div>
@@ -43,12 +61,12 @@ export default function Footer() {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-gray-700 my-8" />
+      <div className="my-8 border-t border-gray-700" />
 
-      {/* Bottom Section */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+      {/* Bottom Bar */}
+      <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
         <p>© 2025 krivisio. All rights reserved.</p>
-        <div className="flex space-x-4 mt-4 md:mt-0">
+        <div className="flex gap-6">
           <Instagram className="w-5 h-5 hover:text-white cursor-pointer" />
           <X className="w-5 h-5 hover:text-white cursor-pointer" />
           <Linkedin className="w-5 h-5 hover:text-white cursor-pointer" />
