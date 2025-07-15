@@ -47,7 +47,7 @@ export default function AboutUs() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col place-items-center justify-center min-h-screen px-20 py-10"
+      className="flex flex-col place-items-center justify-center min-h-screen px-20 py-10 my-10"
     >
       <Image
         ref={imageRef}

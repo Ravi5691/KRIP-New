@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Instagram, Linkedin, X } from "lucide-react";
+import { Instagram, Linkedin, Mail, X } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -22,21 +22,8 @@ export default function Footer() {
               placeholder="Send your question"
               className="bg-[#1F232B] text-white placeholder:text-gray-400 px-5 py-3 pr-12 rounded-md w-full outline-none"
             />
-            <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#FF5A1F] hover:bg-[#e74e16] text-white p-2 rounded-md">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.75 6.75L12 15.75L2.25 6.75"
-                />
-              </svg>
+            <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#FB5711] hover:bg-[#e74e16] text-white p-1 rounded-[4px]">
+             <Mail/>
             </button>
           </div>
         </div>

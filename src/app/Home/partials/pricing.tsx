@@ -1,79 +1,182 @@
-import Image from "next/image"
+"use client"
 
-const features = [
-    "Plan → Assign → Code instantly",
-    "Execution AI for entire team",
-    "AI plans based on the brief",
-    "Auto-tasking with ownership",
-    "One system, one flow",
-    "Krivisio thinks before you build",
-];
+import Image from "next/image"
+import { useEffect, useRef } from "react"
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Check, X } from "lucide-react"
+import { gsap } from "gsap"
+
+const oldSchoolProblems = [
+    {
+        title: "Scattered Planning",
+        description:
+            "Teams brainstorm in docs, whiteboards, or ChatGPT — then manually transfer that to tools like Jira or Trello.",
+    },
+    {
+        title: "Manual Task Breakdown",
+        description: "Project managers spend hours converting briefs into tasks, owners, and timelines.",
+    },
+    {
+        title: "No Context For AI",
+        description:
+            "Generic AI tools don't remember what was planned, why it was planned, or how it connects across the stack. You start from scratch every time.",
+    },
+]
+
+const krivisioFeatures = [
+    {
+        title: "One-Click Brief To Sprint",
+        description: "Drop a project brief and get sprint-ready tasks, assignments, and timelines — instantly.",
+    },
+    {
+        title: "AI-Powered Task Ownership",
+        description: "Tasks are auto-assigned based on skill, load, and role — no spreadsheets, no back-and-forth.",
+    },
+    {
+        title: "Context-Aware LLMs",
+        description:
+            "Krivisio remembers your project's history, goals, and team structure — powering smarter, more relevant tasking and planning with every new input.",
+    },
+]
 
 export default function Pricing() {
+    const containerRef = useRef<HTMLDivElement>(null)
+    const leftCardRef = useRef<HTMLDivElement>(null)
+    const rightCardRef = useRef<HTMLDivElement>(null)
+    const svgRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        gsap.registerPlugin(require("gsap/ScrollTrigger").ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            // Animate SVG first (logo)
+            gsap.from(svgRef.current, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: svgRef.current,
+                    start: "top 80%",
+                },
+            });
+
+            // Animate both cards together after SVG
+            gsap.from([leftCardRef.current, rightCardRef.current], {
+                opacity: 0,
+                y: 50,
+                duration: 1.2,
+                delay: 0.3,
+                stagger: 0.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 80%",
+                },
+            });
+
+            // Optional hover effect
+            const addHoverEffect = (el: HTMLElement | null) => {
+                if (!el) return;
+                el.addEventListener("mouseenter", () => {
+                    gsap.to(el, { scale: 1.02, duration: 0.3, ease: "power2.out" });
+                });
+                el.addEventListener("mouseleave", () => {
+                    gsap.to(el, { scale: 1, duration: 0.3, ease: "power2.out" });
+                });
+            };
+
+            addHoverEffect(leftCardRef.current);
+            addHoverEffect(rightCardRef.current);
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
+
+
+
     return (
-        <div className="flex flex-col place-items-center justify-center min-h-screen px-20 py-30 mt-30">
-            <Image
-                src="/LandingPage/vs.svg" // Path to your logo image
-                alt="Krivisio logo"
-                width={794}
-                height={124}
-            />
+        <div
+            ref={containerRef}
+            className="flex flex-col place-items-center justify-center min-h-screen px-4 md:px-20 mt-60 mb-50 "
+        >
+            <div ref={svgRef}>
+                <Image src="/LandingPage/vs.svg" alt="Krivisio logo" width={794} height={124} className="mb-16" />
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 py-10 w-full mx-auto h-[570px] mt-15">
-                {/* Others Card */}
-                <div className="bg-[#F6F6F6] rounded-2xl p-3 flex flex-col justify-between">
-                    <div className="bg-white p-[24px] h-[341px]">
-                        <div className="bg-[#F6F6F6] w-[185px] text-black text-center px-3 py-2 text-xs rounded-full mb-4 font-medium">
-                            Others
-                        </div>
-                        <h2 className="text-[28px] font-semibold text-black mb-2 mt-10">
-                            Lorem ipsum dolor sit amet consectetur adipiscing.
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-7xl place-items-center mx-auto mt-10">
+                {/* Old School Stack Card */}
+                <Card ref={leftCardRef} className="bg-white border-2 border-gray-200 p-8 h-fit">
+                    <div className="mb-8">
+                        <Badge variant="secondary" className="bg-gray-100 text-gray-700 hover:bg-gray-100 mb-6">
+                            The Old School Stack For Teams
+                        </Badge>
+                        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                            Still Building Projects Like It's 2015?
                         </h2>
-                        <div className="flex justify-between ">
-                            <p className="text-sm text-gray-500 mb-6">
-                                Lorem ipsum dolor sit amet consectetur adipiscing.
-                            </p>
-                            <div className="text-red-600 font-bold text-2xl">
-                                Rs. <span className="text-3xl">6000</span>
-                                <span className="text-sm font-normal text-gray-500"> /year</span>
-                            </div>
-                        </div>
-
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                            Traditional tools trap teams in a loop - planning on Notion, assigning in Jira, coordinating on Slack, and
+                            losing clarity. You're operating plainly. No effort for 1x output.
+                        </p>
                     </div>
-                    <ul className="grid grid-cols-2 gap-y-3 gap-x-6 text-sm text-black mt-6">
-                        {features.map((item, i) => (
-                            <li key={i} className="flex items-start">
-                                •&nbsp;{item}
-                            </li>
+
+                    <div className="space-y-6">
+                        {oldSchoolProblems.map((problem, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                                <div className="flex-shrink-0 mt-1">
+                                    <X className="w-5 h-5 text-red-500" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-gray-900 mb-1">{problem.title}</h3>
+                                    <p className="text-sm text-gray-600 leading-relaxed">{problem.description}</p>
+                                </div>
+                            </div>
                         ))}
-                    </ul>
-                </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-red-50 border-l-4 border-red-200 rounded-r-lg">
+                        <p className="text-sm text-gray-700 italic mb-2">
+                            "We'd plan in Notion, assign in Jira, chat on Slack, then lose context while using claude and cursor — and
+                            still wonder why nothing was moving."
+                        </p>
+                        <p className="text-xs text-gray-500">— Frustrated Product Manager, Early-Stage SaaS</p>
+                    </div>
+                </Card>
 
                 {/* Krivisio Card */}
-                <div className="bg-[#0F1117] rounded-2xl border border-gray-800 shadow-md p-6 flex flex-col justify-between">
-                    <div>
-                        <div className="bg-red-100 text-red-600 px-3 py-1 text-xs rounded-full w-fit mb-4 font-medium">
-                            KRIVISIO
-                        </div>
-                        <h2 className="text-xl font-semibold text-white mb-2">
-                            Lorem ipsum dolor sit amet consectetur adipiscing.
-                        </h2>
-                        <p className="text-sm text-gray-400 mb-6">
-                            Lorem ipsum dolor sit amet consectetur adipiscing.
+                <Card ref={rightCardRef} className="bg-gray-900 border-2 border-gray-700 p-8 text-white h-fit">
+                    <div className="mb-8">
+                        <Badge className="bg-orange-500 hover:bg-orange-600 text-white mb-6">KRIVISIO</Badge>
+                        <h2 className="text-2xl md:text-3xl font-bold mb-4">100x Execution Transformation</h2>
+                        <p className="text-gray-300 text-sm leading-relaxed">
+                            Krivisio is an AI-first execution engine - turning messy project inputs into structured action. From
+                            planning to ownership to code scaffolds — it's all automatic.
                         </p>
-                        <div className="text-green-500 font-bold text-2xl">
-                            Rs. <span className="text-3xl">6000</span>
-                            <span className="text-sm font-normal text-gray-400"> /year</span>
-                        </div>
                     </div>
-                    <ul className="grid grid-cols-2 gap-y-3 gap-x-6 text-sm text-white mt-6">
-                        {features.map((item, i) => (
-                            <li key={i} className="flex items-start">
-                                •&nbsp;{item}
-                            </li>
+
+                    <div className="space-y-6">
+                        {krivisioFeatures.map((feature, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                                <div className="flex-shrink-0 mt-1">
+                                    <Check className="w-5 h-5 text-green-400" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-white mb-1">{feature.title}</h3>
+                                    <p className="text-sm text-gray-300 leading-relaxed">{feature.description}</p>
+                                </div>
+                            </div>
                         ))}
-                    </ul>
-                </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-green-900/30 border-l-4 border-green-400 rounded-r-lg">
+                        <p className="text-sm text-gray-200 italic mb-2">
+                            "We dropped a rough brief, and Krivisio turned it into sprint tasks with owners automatically signed in 5
+                            minutes. We've never shipped faster."
+                        </p>
+                        <p className="text-xs text-gray-400">— Founding Engineer, Series A Startup</p>
+                    </div>
+                </Card>
             </div>
         </div>
     )

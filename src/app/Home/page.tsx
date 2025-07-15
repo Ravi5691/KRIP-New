@@ -15,9 +15,7 @@ export default function LandingPage() {
       <div>
         <Intro />
         <AboutUs />
-        <div className="my-25">
-          <OurServices />
-        </div>
+        <OurServices />
         <HowItWorks />
         <Pricing />
         <DropTheChaos />
