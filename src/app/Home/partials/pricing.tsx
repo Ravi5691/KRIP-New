@@ -6,6 +6,9 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Check, X } from "lucide-react"
 import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const oldSchoolProblems = [
     {
@@ -20,7 +23,7 @@ const oldSchoolProblems = [
     {
         title: "No Context For AI",
         description:
-            "Generic AI tools don't remember what was planned, why it was planned, or how it connects across the stack. You start from scratch every time.",
+            "Generic AI tools don&apos;t remember what was planned, why it was planned, or how it connects across the stack. You start from scratch every time.",
     },
 ]
 
@@ -36,7 +39,7 @@ const krivisioFeatures = [
     {
         title: "Context-Aware LLMs",
         description:
-            "Krivisio remembers your project's history, goals, and team structure — powering smarter, more relevant tasking and planning with every new input.",
+            "Krivisio remembers your project&apos;s history, goals, and team structure — powering smarter, more relevant tasking and planning with every new input.",
     },
 ]
 
@@ -47,10 +50,7 @@ export default function Pricing() {
     const svgRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        gsap.registerPlugin(require("gsap/ScrollTrigger").ScrollTrigger);
-
         const ctx = gsap.context(() => {
-            // Animate SVG first (logo)
             gsap.from(svgRef.current, {
                 opacity: 0,
                 y: 50,
@@ -59,9 +59,8 @@ export default function Pricing() {
                     trigger: svgRef.current,
                     start: "top 80%",
                 },
-            });
+            })
 
-            // Animate both cards together after SVG
             gsap.from([leftCardRef.current, rightCardRef.current], {
                 opacity: 0,
                 y: 50,
@@ -73,28 +72,24 @@ export default function Pricing() {
                     trigger: containerRef.current,
                     start: "top 80%",
                 },
-            });
+            })
 
-            // Optional hover effect
             const addHoverEffect = (el: HTMLElement | null) => {
-                if (!el) return;
+                if (!el) return
                 el.addEventListener("mouseenter", () => {
-                    gsap.to(el, { scale: 1.02, duration: 0.3, ease: "power2.out" });
-                });
+                    gsap.to(el, { scale: 1.02, duration: 0.3, ease: "power2.out" })
+                })
                 el.addEventListener("mouseleave", () => {
-                    gsap.to(el, { scale: 1, duration: 0.3, ease: "power2.out" });
-                });
-            };
+                    gsap.to(el, { scale: 1, duration: 0.3, ease: "power2.out" })
+                })
+            }
 
-            addHoverEffect(leftCardRef.current);
-            addHoverEffect(rightCardRef.current);
-        }, containerRef);
+            addHoverEffect(leftCardRef.current)
+            addHoverEffect(rightCardRef.current)
+        }, containerRef)
 
-        return () => ctx.revert();
-    }, []);
-
-
-
+        return () => ctx.revert()
+    }, [])
 
     return (
         <div
@@ -113,11 +108,11 @@ export default function Pricing() {
                             The Old School Stack For Teams
                         </Badge>
                         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                            Still Building Projects Like It's 2015?
+                            Still Building Projects Like It&apos;s 2015?
                         </h2>
                         <p className="text-gray-600 text-sm leading-relaxed">
                             Traditional tools trap teams in a loop - planning on Notion, assigning in Jira, coordinating on Slack, and
-                            losing clarity. You're operating plainly. No effort for 1x output.
+                            losing clarity. You&apos;re operating plainly. No effort for 1x output.
                         </p>
                     </div>
 
@@ -137,8 +132,8 @@ export default function Pricing() {
 
                     <div className="mt-8 p-4 bg-red-50 border-l-4 border-red-200 rounded-r-lg">
                         <p className="text-sm text-gray-700 italic mb-2">
-                            "We'd plan in Notion, assign in Jira, chat on Slack, then lose context while using claude and cursor — and
-                            still wonder why nothing was moving."
+                            &quot;We&apos;d plan in Notion, assign in Jira, chat on Slack, then lose context while using claude and cursor — and
+                            still wonder why nothing was moving.&quot;
                         </p>
                         <p className="text-xs text-gray-500">— Frustrated Product Manager, Early-Stage SaaS</p>
                     </div>
@@ -151,7 +146,7 @@ export default function Pricing() {
                         <h2 className="text-2xl md:text-3xl font-bold mb-4">100x Execution Transformation</h2>
                         <p className="text-gray-300 text-sm leading-relaxed">
                             Krivisio is an AI-first execution engine - turning messy project inputs into structured action. From
-                            planning to ownership to code scaffolds — it's all automatic.
+                            planning to ownership to code scaffolds — it&apos;s all automatic.
                         </p>
                     </div>
 
@@ -171,8 +166,8 @@ export default function Pricing() {
 
                     <div className="mt-8 p-4 bg-green-900/30 border-l-4 border-green-400 rounded-r-lg">
                         <p className="text-sm text-gray-200 italic mb-2">
-                            "We dropped a rough brief, and Krivisio turned it into sprint tasks with owners automatically signed in 5
-                            minutes. We've never shipped faster."
+                            &quot;We dropped a rough brief, and Krivisio turned it into sprint tasks with owners automatically signed in 5
+                            minutes. We&apos;ve never shipped faster.&quot;
                         </p>
                         <p className="text-xs text-gray-400">— Founding Engineer, Series A Startup</p>
                     </div>
