@@ -108,11 +108,10 @@ export default function DropTheChaos() {
         {stats.map((item, idx) => (
           <div
             key={idx}
-            className={`rounded-[16px] p-[32px] w-[280px] text-center shadow-xl border transition-all mx-5 ${
-              item.dark
+            className={`rounded-[16px] p-[32px] w-[280px] text-center border transition-all mx-5 transform duration-300 hover:scale-[1.03] hover:shadow-[0px_29.63px_57.6px_-7px_#F9A6291F] ${item.dark
                 ? "bg-[#161C28] text-white border-orange-500"
                 : "bg-white text-black border border-orange-100"
-            }`}
+              }`}
           >
             <div className="text-[56px] font-semibold text-orange-500">{item.value}</div>
             <div className="text-lg font-semibold mt-2">{item.title}</div>
@@ -122,6 +121,7 @@ export default function DropTheChaos() {
           </div>
         ))}
       </div>
+
     </div>
   );
 }

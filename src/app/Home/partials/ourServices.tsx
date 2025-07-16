@@ -118,7 +118,7 @@ export default function ProjectAnalysis() {
       {/* Main Content Section (left + right) */}
       <div
         ref={mainContentRef}
-        className="flex gap-10 items-start mt-20 max-h-[711px] bg-white p-10 rounded-sm"
+        className="flex gap-10 items-start mt-20 h-[711px] bg-white p-10 rounded-sm"
       >
         {/* Left Side */}
         <div className="px-5 py-5 gap-5 flex flex-col justify-between h-full">

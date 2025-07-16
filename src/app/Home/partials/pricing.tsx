@@ -102,11 +102,13 @@ export default function Pricing() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-7xl place-items-center mx-auto mt-10">
                 {/* Old School Stack Card */}
-                <Card ref={leftCardRef} className="bg-white border-2 border-gray-200 p-8 h-fit">
+                <Card ref={leftCardRef} className="bg-white border-[0.5px] border-[#00000033] p-8 h-fit">
                     <div className="mb-8">
-                        <Badge variant="secondary" className="bg-gray-100 text-gray-700 hover:bg-gray-100 mb-6">
-                            The Old School Stack For Teams
-                        </Badge>
+                        <div className="flex justify-center mb-6">
+                            <Badge variant="secondary" className=" bg-transparent text-gray-700 border-[0.5px] border-[#0000001A] text-[24px] px-[64px] py-[12px] rounded-full">
+                                The Old School Stack For Teams
+                            </Badge>
+                        </div>
                         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                             Still Building Projects Like It&apos;s 2015?
                         </h2>
@@ -118,12 +120,12 @@ export default function Pricing() {
 
                     <div className="space-y-6">
                         {oldSchoolProblems.map((problem, index) => (
-                            <div key={index} className="flex items-start gap-3">
+                            <div key={index} className="flex items-start gap-3 px-5">
                                 <div className="flex-shrink-0 mt-1">
                                     <X className="w-5 h-5 text-red-500" />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-gray-900 mb-1">{problem.title}</h3>
+                                    <h3 className="font-semibold text-red-500 mb-1">{problem.title}</h3>
                                     <p className="text-sm text-gray-600 leading-relaxed">{problem.description}</p>
                                 </div>
                             </div>
@@ -142,22 +144,27 @@ export default function Pricing() {
                 {/* Krivisio Card */}
                 <Card ref={rightCardRef} className="bg-gray-900 border-2 border-gray-700 p-8 text-white h-fit">
                     <div className="mb-8">
-                        <Badge className="bg-orange-500 hover:bg-orange-600 text-white mb-6">KRIVISIO</Badge>
+                        <div className="flex justify-center mb-6">
+                            <Badge className="bg-[#FB5711] text-white text-[24px] px-[64px] py-[12px] rounded-full">
+                                KRIVISIO
+                            </Badge>
+                        </div>
                         <h2 className="text-2xl md:text-3xl font-bold mb-4">100x Execution Transformation</h2>
                         <p className="text-gray-300 text-sm leading-relaxed">
-                            Krivisio is an AI-first execution engine - turning messy project inputs into structured action. From
-                            planning to ownership to code scaffolds — it&apos;s all automatic.
+                            Krivisio is an AI-first execution engine – turning messy project inputs into structured action.
+                            From planning to ownership to code scaffolds — it&apos;s all automatic.
                         </p>
                     </div>
 
+
                     <div className="space-y-6">
                         {krivisioFeatures.map((feature, index) => (
-                            <div key={index} className="flex items-start gap-3">
+                            <div key={index} className="flex items-start gap-3 px-5">
                                 <div className="flex-shrink-0 mt-1">
                                     <Check className="w-5 h-5 text-green-400" />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-white mb-1">{feature.title}</h3>
+                                    <h3 className="font-semibold text-green-400 mb-1">{feature.title}</h3>
                                     <p className="text-sm text-gray-300 leading-relaxed">{feature.description}</p>
                                 </div>
                             </div>

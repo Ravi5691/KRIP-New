@@ -2,16 +2,19 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
+import Image from 'next/image';
 
 export default function Navbar() {
   const navbarRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     gsap.fromTo(
       navbarRef.current,
       { y: -100, opacity: 0 },
-      { 
+      {
         y: 0,
         opacity: 1,
         duration: 1,
@@ -19,6 +22,12 @@ export default function Navbar() {
       }
     );
   }, []);
+
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Documentation', href: '/documentation' },
+    { name: 'Pricing', href: '/pricing' },
+  ];
 
   return (
     <div
@@ -28,23 +37,29 @@ export default function Navbar() {
       <div className="w-full h-[80px] flex items-center justify-between">
         {/* Left: Logo */}
         <div className="text-2xl font-bold text-black">
-          <span>KRIP.com</span>
+          <Image
+            src="/svg/kripsioLogoDark.svg"
+            alt="Krivisio logo"
+            width={142}
+            height={35}
+          />
         </div>
 
         {/* Center: Nav Links */}
         <div className="flex place-items-center gap-10 text-sm font-medium text-black">
-          <Link
-            href="#"
-            className="bg-[#F9A62980] text-[#1E1E1E] px-[16px] py-2 rounded-sm font-bold"
-          >
-            Home
-          </Link>
-          <Link href="#" className="hover:text-black/80">
-            Documentation
-          </Link>
-          <Link href="#" className="hover:text-black/80">
-            Pricing
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className={`px-[16px] py-2 rounded-sm font-bold ${
+                pathname === link.href
+                  ? 'bg-[#F9A62980] text-[#1E1E1E]'
+                  : 'hover:text-black/80'
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
 
         {/* Right: Login Button */}

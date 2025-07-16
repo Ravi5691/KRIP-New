@@ -11,7 +11,7 @@ export default function Footer() {
 
         {/* Left Column */}
         <div className="flex flex-col gap-6 max-w-md">
-          <Image src="/logo.svg" alt="Logo" width={40} height={40} />
+          <Image src="/svg/logo.svg" alt="Logo" width={56} height={56} />
           <p className="text-white font-medium text-base leading-relaxed">
             Get early AI drops, execution hacks, and Krivisio updates — no spam.
           </p>
