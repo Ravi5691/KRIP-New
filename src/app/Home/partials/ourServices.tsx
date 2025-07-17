@@ -18,47 +18,48 @@ interface ProjectData {
 const projectData: ProjectData[] = [
   {
     id: 1,
-    title: "Market Research & Analysis",
+    title: " AI Project Strategist",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit...",
+      "Drop a project brief, and our AI breaks it into structured milestones, timelines, and sprint-ready workstreams — instantly. No PM guesswork, just execution clarity.",
     image: "/placeholder.svg?height=400&width=600",
   },
   {
     id: 2,
-    title: "Strategic Planning",
+    title: " AI Task Manager",
     description:
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
+      "Smart task generation, auto-prioritization, and owner assignment based on team capacity, skillsets, and deadlines. Get the right work to the right person — every time.",
     image: "/placeholder.svg?height=400&width=600",
   },
   {
     id: 3,
-    title: "Design & Development",
+    title: " Base Code Generation",
     description:
-      "Excepteur sint occaecat cupidatat non proident...",
+      "For engineering projects, Krivisio auto-generates base code structures and scaffolds from your functional briefs or tickets — so devs can skip boilerplate and start solving.",
     image: "/placeholder.svg?height=400&width=600",
   },
   {
     id: 4,
-    title: "Testing & Quality Assurance",
+    title: " Code Compliance Assistant",
     description:
-      "Totam rem aperiam, eaque ipsa quae ab illo inventore...",
+      "AI that reviews code for security, compliance, and internal standards — and flags issues proactively. Built-in sanity checks for scale, privacy, and peace of mind.",
     image: "/placeholder.svg?height=400&width=600",
   },
   {
     id: 5,
-    title: "Implementation & Deployment",
+    title: " AI MoM (Minutes of Meeting)",
     description:
-      "Sed quia consequuntur magni dolores eos qui ratione voluptatem...",
+      "Upload a call, recording, or raw meeting notes — and get structured summaries, action items, and tagged owners. MoMs that actually move work forward.",
     image: "/placeholder.svg?height=400&width=600",
   },
   {
     id: 6,
-    title: "Monitoring & Optimization",
+    title: " AI Talent Matcher",
     description:
-      "Ut enim ad minima veniam, quis nostrum exercitationem ullam...",
+      "Krivisio matches tasks to available team members, freelancers, or external talent based on skill graphs, availability, and past performance. Like an AI-powered ops manager.",
     image: "/placeholder.svg?height=400&width=600",
   },
 ];
+
 
 export default function ProjectAnalysis() {
   const [activeProject, setActiveProject] = useState<number>(1);
@@ -148,13 +149,13 @@ export default function ProjectAnalysis() {
                     {project.id.toString().padStart(2, "0")}
                   </div>
                   <div
-                    className={`text-sm font-medium ${
+                    className={`text-[12px] font-medium ${
                       activeProject === project.id
                         ? "text-white"
                         : "text-gray-700"
                     }`}
                   >
-                    Project Analysis
+                    {project.title}
                   </div>
                 </CardContent>
               </Card>
@@ -164,7 +165,7 @@ export default function ProjectAnalysis() {
 
         {/* Right Side */}
         <div className="space-y-3">
-          <div className="bg-[#F9A62933] flex flex-col justify-between h-[639px] py-[21px] w-[733px] rounded-lg items-center gap-10">
+          <div className="bg-[#F9A62933] flex flex-col gap-10 h-[639px] py-[21px] w-[733px] rounded-lg items-center">
             <Image
               src={currentProject.image}
               alt={currentProject.title}

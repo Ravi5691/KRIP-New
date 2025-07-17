@@ -148,9 +148,9 @@ export default function HowItWorks() {
         {/* Content Area */}
         <div
           ref={contentRef}
-          className="border-[8px] h-[532px] border-white/8 rounded-lg w-full"
+          className=" h-[532px] bg-white/8 p-[8px] rounded-lg w-full"
         >
-          <div className="bg-white dot-background h-full text-black rounded-lg p-6">
+          <div className="bg-white dot-background h-full text-black rounded-md p-6">
             <p>{steps.find((s) => s.id === activeStep)?.content}</p>
           </div>
         </div>

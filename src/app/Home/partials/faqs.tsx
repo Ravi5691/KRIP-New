@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import {
@@ -11,6 +11,59 @@ import { ArrowRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+
+const faqData = [
+  {
+    question: "What exactly does Krivisio do?",
+    answer:
+      "Krivisio is an AI-native execution platform that turns messy project briefs into sprint-ready tasks, assigns them intelligently, and even scaffolds code — all in one system.",
+  },
+  {
+    question: "How is it different from tools like Jira or Notion?",
+    answer:
+      "Krivisio isn’t just a tool — it’s the layer before the tools. It doesn’t wait for tasks to be created — it creates them. Planning, assigning, and structuring execution is fully automated with AI. No copy-pasting between tools needed.",
+  },
+  {
+    question: "Who is Krivisio built for?",
+    answer:
+      "For tech teams — product managers, developers, and startup teams who want faster planning, smarter delegation, and less tool fatigue. Agencies and remote-first teams love it too.",
+  },
+  {
+    question: "Can it generate code?",
+    answer:
+      "Yes — Krivisio can generate base code scaffolds for engineering tasks using AI, based on the context of the project brief and task. It’s not a code finisher — but it’s a massive head start.",
+  },
+  {
+    question: "How does task assignment work?",
+    answer:
+      "Krivisio’s AI considers each team member’s role, workload, and skill graph to automatically assign work — reducing bottlenecks and decision fatigue.",
+  },
+  {
+    question: "What tools does Krivisio replace?",
+    answer:
+      "Jira, Notion, Slack (for task coordination), whiteboards, and task assignment spreadsheets. It's designed to consolidate 4–5 tools into one intelligent workspace.",
+  },
+  {
+    question: "Is my data secure?",
+    answer:
+      "Absolutely. We follow enterprise-grade security protocols and never train our models on your proprietary data.",
+  },
+  {
+    question: "When is it launching?",
+    answer:
+      "We’re currently onboarding early teams for private beta. Join the waitlist to get early access before the public launch.",
+  },
+  {
+    question: "What does Krivisio cost?",
+    answer:
+      "Krivisio varies with per user, simply put pay as you need — all features included. We’re also offering early access discounts for waitlist users.",
+  },
+  {
+    question: "What’s the onboarding process like?",
+    answer:
+      "Super simple. Make your team, Make your project brief, and Krivisio will auto-generate your task plan, assign owners, and kick off execution. No complex setup. No long training sessions. Just plug in and start working.",
+  },
+];
 
 export default function FAQs() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -61,7 +114,7 @@ export default function FAQs() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col place-items-center justify-center min-h-screen px-6 md:px-20 pb-10 mt-10"
+      className="flex flex-col place-items-center justify-center min-h-screen px-6 md:px-20 pb-10"
     >
       {/* Image */}
       <div ref={imageRef}>
@@ -78,7 +131,7 @@ export default function FAQs() {
         {/* Left: Question form */}
         <div ref={leftRef} className="flex flex-col">
           <span className="text-[28px] text-black">Got Question?</span>
-          <div className="shadow-[0_0_10px_rgba(0,0,0,0.2)] flex w-4/5 mt-5 py-2 rounded-sm px-4 gap-5 bg-white">
+          <div className="shadow-[0_0_10px_rgba(249,166,41,0.2)] flex w-4/5 mt-5 py-2 rounded-sm px-4 gap-5 bg-white">
             <input
               type="text"
               placeholder="Send your question"
@@ -96,58 +149,16 @@ export default function FAQs() {
             type="single"
             collapsible
             className="w-full"
-            defaultValue="item-1"
+            defaultValue="item-0"
           >
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Product Information</AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-4 text-balance">
-                <p>
-                  Our flagship product combines cutting-edge technology with sleek
-                  design. Built with premium materials, it offers unparalleled
-                  performance and reliability.
-                </p>
-                <p>
-                  Key features include advanced processing capabilities, and an
-                  intuitive user interface designed for both beginners and experts.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Shipping Details</AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-4 text-balance">
-                <p>
-                  We offer worldwide shipping through trusted courier partners.
-                  Standard delivery takes 3-5 business days, while express shipping
-                  ensures delivery within 1-2 business days.
-                </p>
-                <p>
-                  All orders are carefully packaged and fully insured. Track your
-                  shipment in real-time through our dedicated tracking portal.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Return Policy</AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-4 text-balance">
-                <p>
-                  We stand behind our products with a comprehensive 30-day return
-                  policy. If you&apos;re not completely satisfied, simply return the
-                  item in its original condition.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-4">
-              <AccordionTrigger>Support & Contact</AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-4 text-balance">
-                <p>
-                  Need help? Contact our support team anytime via chat, email, or phone.
-                  We’re here to help you 24/7.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+            {faqData.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-balance">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
         </div>
       </div>
