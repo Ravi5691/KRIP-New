@@ -119,7 +119,7 @@ export default function DropTheChaos() {
 
       <div ref={textRef} className="text-center mt-15 max-w-6xl">
         <p className="text-black text-[24px] font-semibold">
-          Messy whiteboards. Dozens of tools. Manual follow-ups. That's not execution — that's chaos. Krivisio replaces
+          Messy whiteboards. Dozens of tools. Manual follow-ups. That&apos;s not execution — that&apos;s chaos. Krivisio replaces
           it with AI that plans, assigns, and executes — from day zero.
         </p>
       </div>
@@ -128,9 +128,8 @@ export default function DropTheChaos() {
         {stats.map((item, idx) => (
           <div
             key={idx}
-            className={`rounded-[16px] p-[32px] w-[280px] text-center border transition-all mx-5 transform duration-300 hover:scale-[1.03] hover:shadow-[0px_29.63px_57.6px_-7px_#F9A6291F] ${
-              item.dark ? "bg-[#161C28] text-white border-orange-500" : "bg-white text-black border border-orange-100"
-            }`}
+            className={`rounded-[16px] p-[32px] w-[280px] text-center border transition-all mx-5 transform duration-300 hover:scale-[1.03] hover:shadow-[0px_29.63px_57.6px_-7px_#F9A6291F] ${item.dark ? "bg-[#161C28] text-white border-orange-500" : "bg-white text-black border border-orange-100"
+              }`}
           >
             <div
               ref={(el) => {

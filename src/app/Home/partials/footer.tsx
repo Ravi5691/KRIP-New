@@ -23,7 +23,7 @@ export default function Footer() {
               className="bg-[#1F232B] text-white placeholder:text-gray-400 px-5 py-3 pr-12 rounded-md w-full outline-none"
             />
             <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#FB5711] hover:bg-[#e74e16] text-white p-1 rounded-[4px]">
-             <Mail/>
+              <Mail />
             </button>
           </div>
         </div>

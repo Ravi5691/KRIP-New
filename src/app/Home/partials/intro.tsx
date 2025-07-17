@@ -10,7 +10,7 @@ export default function Intro() {
   const textRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1 , delay:0.1 } });
+    const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1, delay: 0.1 } });
 
     tl.fromTo(
       ellipseRef.current,

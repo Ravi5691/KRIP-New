@@ -131,29 +131,26 @@ export default function ProjectAnalysis() {
             {projectData.map((project) => (
               <Card
                 key={project.id}
-                className={`cursor-pointer transition-all duration-300 hover:shadow-md ${
-                  activeProject === project.id
+                className={`cursor-pointer transition-all duration-300 hover:shadow-md ${activeProject === project.id
                     ? "bg-gradient-to-b from-[#F9A629] to-[#f9a6298d] text-white shadow-lg"
                     : "bg-white border-gray-200 hover:border-gray-300"
-                }`}
+                  }`}
                 onClick={() => setActiveProject(project.id)}
               >
                 <CardContent className="p-6 text-center">
                   <div
-                    className={`text-2xl font-bold mb-2 ${
-                      activeProject === project.id
+                    className={`text-2xl font-bold mb-2 ${activeProject === project.id
                         ? "text-white"
                         : "text-gray-400"
-                    }`}
+                      }`}
                   >
                     {project.id.toString().padStart(2, "0")}
                   </div>
                   <div
-                    className={`text-[12px] font-medium ${
-                      activeProject === project.id
+                    className={`text-[12px] font-medium ${activeProject === project.id
                         ? "text-white"
                         : "text-gray-700"
-                    }`}
+                      }`}
                   >
                     {project.title}
                   </div>
