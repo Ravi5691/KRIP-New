@@ -14,11 +14,11 @@ export default function LandingPage() {
     <div className="bg-[#FBFAF9] min-h-screen hide-scroll  font-[var(--font-geist-sans)] overflow-x-hidden">
       <div>
         <Intro />
-        <DropTheChaos />
         <AboutUs />
         <OurServices />
         <HowItWorks />
         <Pricing />
+        <DropTheChaos />
         <FAQs />
         <Footer />
       </div>

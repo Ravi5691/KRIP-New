@@ -94,7 +94,7 @@ export default function Pricing() {
     return (
         <div
             ref={containerRef}
-            className="flex flex-col place-items-center justify-center min-h-screen px-4 md:px-20 mt-60 mb-60 "
+            className="flex flex-col place-items-center justify-center min-h-screen px-4 md:px-20 mt-60 mb-45"
         >
             <div ref={svgRef}>
                 <Image src="/LandingPage/vs.svg" alt="Krivisio logo" width={794} height={124} className="mb-16" />

@@ -64,7 +64,7 @@ export default function Intro() {
         <div className="flex justify-end mt-10">
           <div
             ref={textRef}
-            className="flex flex-col gap-8 w-[35%] bg-[#fbfaf9d2] z-50"
+            className="flex flex-col gap-8 w-[35%] bg-[#fbfaf9d2] z-40"
           >
             <p className="text-lg font-medium max-w-xl text-black">
               It eliminates the manual work behind planning, communication, and coordination, making execution 3x faster and 40% cheaper.

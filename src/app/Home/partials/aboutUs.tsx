@@ -88,7 +88,7 @@ export default function AboutUs() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col place-items-center justify-center min-h-screen px-6 md:px-20 py-10 my-10"
+      className="flex flex-col place-items-center justify-center min-h-screen px-6 md:px-20 py-10 my-8 mt-5"
     >
       <Image ref={imageRef} src="/LandingPage/aboutus.svg" alt="Krivisio logo" width={418} height={124} />
 
