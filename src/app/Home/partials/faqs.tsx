@@ -38,31 +38,31 @@ const faqData = [
     answer:
       "Krivisio’s AI considers each team member’s role, workload, and skill graph to automatically assign work — reducing bottlenecks and decision fatigue.",
   },
-  {
-    question: "What tools does Krivisio replace?",
-    answer:
-      "Jira, Notion, Slack (for task coordination), whiteboards, and task assignment spreadsheets. It's designed to consolidate 4–5 tools into one intelligent workspace.",
-  },
-  {
-    question: "Is my data secure?",
-    answer:
-      "Absolutely. We follow enterprise-grade security protocols and never train our models on your proprietary data.",
-  },
-  {
-    question: "When is it launching?",
-    answer:
-      "We’re currently onboarding early teams for private beta. Join the waitlist to get early access before the public launch.",
-  },
-  {
-    question: "What does Krivisio cost?",
-    answer:
-      "Krivisio varies with per user, simply put pay as you need — all features included. We’re also offering early access discounts for waitlist users.",
-  },
-  {
-    question: "What’s the onboarding process like?",
-    answer:
-      "Super simple. Make your team, Make your project brief, and Krivisio will auto-generate your task plan, assign owners, and kick off execution. No complex setup. No long training sessions. Just plug in and start working.",
-  },
+  // {
+  //   question: "What tools does Krivisio replace?",
+  //   answer:
+  //     "Jira, Notion, Slack (for task coordination), whiteboards, and task assignment spreadsheets. It's designed to consolidate 4–5 tools into one intelligent workspace.",
+  // },
+  // {
+  //   question: "Is my data secure?",
+  //   answer:
+  //     "Absolutely. We follow enterprise-grade security protocols and never train our models on your proprietary data.",
+  // },
+  // {
+  //   question: "When is it launching?",
+  //   answer:
+  //     "We’re currently onboarding early teams for private beta. Join the waitlist to get early access before the public launch.",
+  // },
+  // {
+  //   question: "What does Krivisio cost?",
+  //   answer:
+  //     "Krivisio varies with per user, simply put pay as you need — all features included. We’re also offering early access discounts for waitlist users.",
+  // },
+  // {
+  //   question: "What’s the onboarding process like?",
+  //   answer:
+  //     "Super simple. Make your team, Make your project brief, and Krivisio will auto-generate your task plan, assign owners, and kick off execution. No complex setup. No long training sessions. Just plug in and start working.",
+  // },
 ];
 
 export default function FAQs() {

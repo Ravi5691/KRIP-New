@@ -16,7 +16,7 @@ export default function LandingPage() {
         <Intro />
         <AboutUs />
         <OurServices />
-        <HowItWorks />
+        {/* <HowItWorks /> */}
         <Pricing />
         <DropTheChaos />
         <FAQs />

@@ -147,7 +147,7 @@ export default function Pricing() {
                 </div>
 
                 {/* Krivisio Card */}
-                <div className="h-full">
+                <div className="h-full scale-103 ">
                     <Card
                         ref={rightCardRef}
                         className="h-full bg-gray-900 border-2 border-gray-700 p-8 text-white flex flex-col justify-between"

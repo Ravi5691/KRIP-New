@@ -112,7 +112,7 @@ export default function DropTheChaos() {
   }, [])
 
   return (
-    <div ref={sectionRef} className="flex flex-col items-center justify-center min-h-screen px-6 md:px-20 mb-35">
+    <div ref={sectionRef} className="flex flex-col items-center justify-center min-h-screen px-6 md:px-20 mb-10">
       <div ref={imageRef}>
         <Image src="/LandingPage/score.svg" alt="Krivisio logo" width={652} height={124} />
       </div>
