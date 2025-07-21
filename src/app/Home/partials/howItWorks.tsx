@@ -131,15 +131,15 @@ export default function HowItWorks() {
               key={step.id}
               onClick={() => setActiveStep(step.id)}
               className={cn(
-                "w-full cursor-pointer rounded-sm transition-all",
+                "w-full cursor-pointer rounded-sm transition-all px-2",
                 activeStep === step.id
                   ? "bg-gradient-to-br from-[#F6C65C] to-[#F5955B] text-black"
                   : "bg-white text-black"
               )}
             >
-              <CardContent className="p-4 text-center font-medium">
-                <div className="text-xl font-bold">0{step.id}</div>
-                <div className="text-sm mt-2">{step.title}</div>
+              <CardContent className="p-4 text-left">
+                <div className="text-[32px] font-semibold">0{step.id}</div>
+                <div className="font-semibold mt-2">{step.title}</div>
               </CardContent>
             </Card>
           ))}
@@ -148,10 +148,18 @@ export default function HowItWorks() {
         {/* Content Area */}
         <div
           ref={contentRef}
-          className=" h-[532px] bg-white/8 p-[8px] rounded-lg w-full"
+          className="h-[532px] bg-white/8 p-[8px] rounded-lg w-full overflow-hidden"
         >
-          <div className="bg-white dot-background h-full text-black rounded-md p-6">
-            <p>{steps.find((s) => s.id === activeStep)?.content}</p>
+          <div className="bg-white h-full text-black rounded-md p-0 overflow-hidden">
+            <video
+              key={activeStep} // ensures restart on step change
+              src={`/videos/FINAL POINT ${activeStep}.mp4`} // You can use dynamic src if you have videos per step
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover rounded-md"
+            />
           </div>
         </div>
       </div>
