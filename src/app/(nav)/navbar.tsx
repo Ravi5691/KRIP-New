@@ -37,12 +37,15 @@ export default function Navbar() {
       <div className="w-full h-[80px] flex items-center justify-between">
         {/* Left: Logo */}
         <div className="text-2xl font-bold text-black">
-          <Image
-            src="/svg/kripsioLogoDark.svg"
-            alt="Krivisio logo"
-            width={142}
-            height={35}
-          />
+          <Link href="/">
+            <Image
+              src="/svg/kripsioLogoDark.svg"
+              alt="Krivisio logo"
+              width={142}
+              height={35}
+            />
+          </Link>
+
         </div>
 
         {/* Center: Nav Links */}
@@ -51,11 +54,10 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`px-[16px] py-2 rounded-sm font-bold ${
-                pathname === link.href
+              className={`px-[16px] py-2 rounded-sm font-bold ${pathname === link.href
                   ? 'bg-[#F9A62980] text-[#1E1E1E]'
                   : 'hover:text-black/80'
-              }`}
+                }`}
             >
               {link.name}
             </Link>
