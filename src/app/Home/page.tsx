@@ -1,6 +1,5 @@
 import AboutUs from "./partials/aboutUs";
 import FAQs from "./partials/faqs";
-import Footer from "./partials/footer";
 // import HowItWorks from "./partials/howItWorks";
 import Intro from "./partials/intro";
 import OurServices from "./partials/ourServices";
@@ -22,7 +21,6 @@ export default function LandingPage() {
         <Pricing />
         <DropTheChaos />
         <FAQs />
-        <Footer />
       </div>
     </div>
   );

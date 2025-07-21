@@ -112,7 +112,7 @@ export default function DropTheChaos() {
   }, [])
 
   return (
-    <div ref={sectionRef} className="flex flex-col items-center justify-center min-h-screen px-6 md:px-20 mb-10">
+    <div ref={sectionRef} className="flex flex-col items-center justify-center min-h-screen px-6 md:px-20 mb-10b">
       <div ref={imageRef}>
         <Image src="/LandingPage/score.svg" alt="Krivisio logo" width={652} height={124} />
       </div>
@@ -124,12 +124,16 @@ export default function DropTheChaos() {
         </p>
       </div>
 
-      <div ref={cardWrapperRef} className="flex flex-wrap justify-center gap-10 py-10 mt-10">
+      <div ref={cardWrapperRef} className="flex flex-wrap justify-center gap-10 py-10 mt-15">
         {stats.map((item, idx) => (
           <div
             key={idx}
-            className={`rounded-[16px] p-[32px] w-[280px] text-center border transition-all mx-5 transform duration-300 hover:scale-[1.03] hover:shadow-[0px_29.63px_57.6px_-7px_#F9A6291F] ${item.dark ? "bg-[#161C28] text-white border-orange-500" : "bg-white text-black border border-orange-100"
-              }`}
+            className={`
+                 rounded-[16px] p-[32px] w-[280px] text-center border transition-all mx-5 transform duration-300 
+                 hover:scale-[1.03] hover:shadow-[0px_29.63px_57.6px_-7px_#F9A6291F] 
+                 ${item.dark ? "bg-[#161C28] text-white border-orange-500" : "bg-white text-black border border-orange-100"} 
+                 ${idx === 1 ? "md:mb-5 -mt-8" : ""}
+                 `}
           >
             <div
               ref={(el) => {
