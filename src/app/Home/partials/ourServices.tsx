@@ -124,7 +124,7 @@ export default function ProjectAnalysis() {
         {/* Left Side */}
         <div className="px-5 py-5 gap-5 flex flex-col justify-between h-full">
           <h2 className="text-xl text-left md:text-2xl text-black">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit.
+            Execution. Reimagined for the AI era.
           </h2>
 
           <div className="grid grid-cols-2 gap-8">

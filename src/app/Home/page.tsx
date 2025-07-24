@@ -1,6 +1,6 @@
 import AboutUs from "./partials/aboutUs";
 import FAQs from "./partials/faqs";
-import HowItWorks from "./partials/howItWorks";
+// import HowItWorks from "./partials/howItWorks";
 import Intro from "./partials/intro";
 import OurServices from "./partials/ourServices";
 import Pricing from "./partials/pricing";
@@ -17,7 +17,7 @@ export default function LandingPage() {
         <CountdownTimer/>
         <AboutUs />
         <OurServices />
-        <HowItWorks />
+        {/* <HowItWorks /> */}
         <Pricing />
         <DropTheChaos />
         <FAQs />
