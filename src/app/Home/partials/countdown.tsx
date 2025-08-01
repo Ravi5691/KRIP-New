@@ -28,7 +28,7 @@ export function CountdownTimer() {
 
   // Timer countdown logic
   useEffect(() => {
-    const targetDate = new Date("2025-07-31T00:00:00Z").getTime();
+    const targetDate = new Date("2025-08-15T00:00:00Z").getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();

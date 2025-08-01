@@ -134,3 +134,8 @@
   background-position: 0 0, 12px 12px;
   background-size: 30px 30px;
 }
+
+.fade-out {
+  opacity: 0 !important;
+  transition: opacity 0.5s ease-in-out;
+}
