@@ -67,7 +67,7 @@ export default function Navbar() {
         {/* Right: Login Button */}
         <div>
           <button className="bg-[#FB5711] text-white text-sm font-semibold px-5 py-2 rounded-sm hover:bg-orange-600 transition">
-            Login
+            Follow Our Journey
           </button>
         </div>
       </div>
