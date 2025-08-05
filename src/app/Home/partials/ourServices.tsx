@@ -228,7 +228,7 @@ const projectData: ProjectData[] = [
     title: " Code Compliance Assistant",
     description:
       "AI that reviews code for security, compliance, and internal standards — and flags issues proactively. Built-in sanity checks for scale, privacy, and peace of mind.",
-    image: "/videos/project-4.mp4",
+    image: "/serviceVideos/project-4.mp4",
   },
   {
     id: 5,

@@ -13,7 +13,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import DropTheChaos from "../Home/partials/droptheChaos"
 import SmoothScrollWrapper from "../(components)/smoothScroll"
-
+import { Check } from "lucide-react"
 
 export default function Pricing() {
     const sectionRef = useRef(null)
@@ -55,7 +55,7 @@ export default function Pricing() {
                         />
                     </div>
                     <p className="text-black mx-auto text-[20px] font-semibold text-center mt-10">
-                        Smarter execution starts here — faster, leaner, all-in-one. Replace 5 tools. Cut costs by 3×. <br/> Move from brief to execution — all in one intelligent workspace.
+                        Smarter execution starts here — faster, leaner, all-in-one. Replace 5 tools. Cut costs by 3×. <br /> Move from brief to execution — all in one intelligent workspace.
                     </p>
                 </div>
 
@@ -63,7 +63,8 @@ export default function Pricing() {
                 <div className="max-w-7xl mx-auto px-10 mb-45">
                     <div className="grid md:grid-cols-2">
                         {/* Traditional Stack */}
-                        <div className="rounded-lg rounded-r-none border overflow-hidden my-8 px-10">
+                        <div className=" overflow-hidden my-8 px-10 border-r">
+                            <div className="flex justify-center mb-20 mt-10"><Image src="/svg/otherpricing.svg" alt="Krivisio logo" width={418} height={124} /></div>
                             <h3 className="text-2xl font-bold text-center mt-5 text-gray-900">Traditional Stack</h3>
                             <Table className="mt-10 overflow-x-hidden">
                                 <TableBody>
@@ -98,22 +99,54 @@ export default function Pricing() {
                         </div>
 
                         {/* Krivisio Offer */}
-                        <Card className="bg-[#161C28] text-white">
+                        <Card className="bg-transparent text-white border-none shadow-none">
                             <CardContent className="p-8 h-full flex flex-col">
-                                <div className="text-center mb-8">
-                                    <h3 className="text-2xl font-bold mb-2">
+                                <div className="flex justify-center mb-20">
+                                    <Image src="/svg/krippricing.svg" alt="Krivisio logo" width={418} height={124} />
+                                </div>
+                                <div className="text-center mb-6 mt-5">
+                                    <h3 className="text-2xl font-bold mb-2 text-black">
                                         <span className="text-[#FB5711]">Krivisio</span> — All-in-One AI Execution Platform
                                     </h3>
-                                    <div className="mt-15">
+                                    {/* <div className="mt-15">
                                         <p className="text-sm text-gray-300">Our Krivisio Price</p>
                                         <div className="text-[40px] font-bold text-[#FB5711]">
                                             $150<span className="text-base text-white font-normal">/team/month</span>
                                         </div>
                                         <p className="text-[10px] text-gray-300">Cut costs by 3x. Move 5× faster.</p>
+                                    </div> */}
+                                    <div className="space-y-3 text-sm text-black dark:text-white mt-6 ml-6">
+                                        <div className="flex items-start gap-2">
+                                            <Check className="text-green-600 w-4 h-4 mt-0.5" />
+                                            <p>
+                                                Cut costs by <span className="text-[#FB5711]">30%</span>.
+                                            </p>
+                                        </div>
+
+                                        <div className="flex items-start gap-2">
+                                            <Check className="text-green-600 w-4 h-4 mt-0.5" />
+                                            <p>
+                                                Achieve <span className="text-[#FB5711]">30%</span> more with the same team
+                                            </p>
+                                        </div>
+
+                                        <div className="flex items-start gap-2">
+                                            <Check className="text-green-600 w-4 h-4 mt-0.5" />
+                                            <p>
+                                                Reduce <span className="text-[#FB5711]">90%</span> of manual task management
+                                            </p>
+                                        </div>
+
+                                        <div className="flex items-start gap-2">
+                                            <Check className="text-green-600 w-4 h-4 mt-0.5" />
+                                            <p>
+                                                Deliver <span className="text-[#FB5711]">5x</span> faster than traditional workflows
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div className="flex-1 px-5 mt-5">
+                                <div className="flex-1 px-5 mt-6 text-black">
                                     <h4 className="font-semibold mb-4 text-center">Includes</h4>
                                     <div className="grid grid-cols-2 gap-3 gap-x-10 text-sm">
                                         {[
@@ -125,16 +158,18 @@ export default function Pricing() {
                                             "Internal compliance & more",
                                         ].map((text, i) => (
                                             <div key={i} className="flex items-center gap-2">
-                                                <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                                                <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
                                                 <span>{text}</span>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
 
-                                <div className="mt-8 text-center">
+                                <span className="text-black text-center mt-10">Krivisio does it all in one fraction of the cost</span>
+
+                                <div className="mt-6 text-center">
                                     <Button className="bg-[#FB5711] hover:bg-orange-600 text-white px-6 py-4 font-semibold rounded-sm">
-                                        Start your trial
+                                        Join the Waitlist
                                     </Button>
                                 </div>
                             </CardContent>
