@@ -72,7 +72,7 @@ export function CountdownTimer() {
   return (
     <div
       ref={sectionRef}
-      className="relative flex flex-col items-center justify-center overflow-hidden mt-20 mb-30"
+      className="relative lg:flex hidden flex-col items-center justify-center overflow-hidden mt-20 mb-30 "
     >
       {/* Coming Soon Background Text */}
       <div className="absolute top-7 inset-0 flex items-center justify-center pointer-events-none opacity-5">

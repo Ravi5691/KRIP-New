@@ -114,7 +114,7 @@ export default function FAQs() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col place-items-center justify-center min-h-screen px-6 md:px-20 pb-10"
+      className="flex flex-col place-items-center justify-center lg:min-h-screen px-6 lg:py-0 py-10 md:px-20 pb-10"
     >
       {/* Image */}
       <div ref={imageRef}>
@@ -123,15 +123,16 @@ export default function FAQs() {
           alt="Krivisio logo"
           width={261}
           height={124}
+          className="w-[112px] h-[50px] lg:w-[261px] lg:h-[124px] "
         />
       </div>
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center gap-12 w-full mt-16">
         {/* Left: Question form */}
-        <div ref={leftRef} className="flex flex-col">
-          <span className="text-[28px] text-black">Got Question?</span>
-          <div className="shadow-[0_0_10px_rgba(249,166,41,0.2)] flex w-4/5 mt-5 py-2 rounded-sm px-4 gap-5 bg-white">
+        <div ref={leftRef} className="flex flex-col order-2 lg:order-1">
+          <span className="lg:text-[28px] text-[16px] font-semibold text-black">Got Question?</span>
+          <div className="shadow-[0_0_10px_rgba(249,166,41,0.2)] flex lg:w-4/5 mt-5 py-2 rounded-sm px-4 gap-5 bg-white">
             <input
               type="text"
               placeholder="Send your question"
@@ -144,7 +145,7 @@ export default function FAQs() {
         </div>
 
         {/* Right: Accordion */}
-        <div ref={rightRef}>
+        <div ref={rightRef} className="order-1 lg:order-2">
           <Accordion
             type="single"
             collapsible

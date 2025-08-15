@@ -42,7 +42,7 @@ export default function Pricing() {
             <SmoothScrollWrapper />
             <section
                 ref={sectionRef}
-                className="w-full px-6 md:px-20 py-30 min-h-screen bg-[#FBFAF9]"
+                className="w-full px-5 md:px-20 lg:py-30 py-20 min-h-screen bg-[#FBFAF9]"
             >
                 {/* Header Section */}
                 <div className="text-center mb-20">
@@ -52,21 +52,22 @@ export default function Pricing() {
                             alt="Krivisio logo"
                             width={327}
                             height={124}
+                            className="w-[150px] h-[50px] lg:w-[327px] lg:h-[124px]"
                         />
                     </div>
-                    <p className="text-black mx-auto text-[20px] font-semibold text-center mt-10">
-                        Smarter execution starts here — faster, leaner, all-in-one. Replace 5 tools. Cut costs by 3×. <br /> Move from brief to execution — all in one intelligent workspace.
+                    <p className="text-black mx-auto lg:text-[20px] text-base font-semibold text-center mt-10">
+                        Smarter execution starts here — faster, leaner, all-in-one. Replace 5 tools. Cut costs by 3×. <br className="lg:block hidden" /> Move from brief to execution — all in one intelligent workspace.
                     </p>
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="max-w-7xl mx-auto px-10 mb-45">
+                <div className="lg:max-w-7xl mx-auto lg:px-10 lg:mb-45 mb-25">
                     <div className="grid md:grid-cols-2">
                         {/* Traditional Stack */}
-                        <div className=" overflow-hidden my-8 px-10 border-r">
+                        <div className=" overflow-hidden lg:block hidden lg:my-8 lg:px-10 order-2 lg:order-1 lg:border-r">
                             <div className="flex justify-center mb-20 mt-10"><Image src="/svg/otherpricing.svg" alt="Krivisio logo" width={418} height={124} /></div>
-                            <h3 className="text-2xl font-bold text-center mt-5 text-gray-900">Traditional Stack</h3>
-                            <Table className="mt-10 overflow-x-hidden">
+                            <h3 className="lg:text-2xl text-[20px] font-bold text-center mt-5 text-gray-900">Traditional Stack</h3>
+                            <Table className="lg:mt-10 mt-5 overflow-x-hidden  lg:text-base text-[10px]">
                                 <TableBody>
                                     {stackData.map((item) => (
                                         <TableRow key={item.name}>
@@ -76,13 +77,13 @@ export default function Pricing() {
                                                     alt={item.name}
                                                     width={24}
                                                     height={24}
-                                                    className="rounded"
+                                                    className="rounded w-[10px] h-[10px] lg:w-[24px] lg:h-[24px]"
                                                 />
                                             </TableCell>
-                                            <TableCell className="py-4 pl-10">
+                                            <TableCell className="lg:py-4 py-2 pl-10">
                                                 <span className="text-gray-900 font-medium">{item.name}</span>
                                             </TableCell>
-                                            <TableCell className="text-left pl-15 py-4 font-semibold text-gray-900">
+                                            <TableCell className="text-left lg:pl-15 pl-5 lg:py-4 py-2 font-semibold text-gray-900">
                                                 {item.price}
                                             </TableCell>
                                         </TableRow>
@@ -99,13 +100,13 @@ export default function Pricing() {
                         </div>
 
                         {/* Krivisio Offer */}
-                        <Card className="bg-transparent text-white border-none shadow-none">
-                            <CardContent className="p-8 h-full flex flex-col">
-                                <div className="flex justify-center mb-20">
+                        <Card className="bg-transparent text-white order-1 lg:order-2 border-none shadow-none">
+                            <CardContent className="lg:p-8 lg:px-0 px-2 h-full flex flex-col">
+                                <div className="flex justify-center lg:mb-20 mb-10">
                                     <Image src="/svg/krippricing.svg" alt="Krivisio logo" width={418} height={124} />
                                 </div>
                                 <div className="text-center mb-6 mt-5">
-                                    <h3 className="text-2xl font-bold mb-2 text-black">
+                                    <h3 className="lg:text-2xl text-[16px] font-bold mb-2 text-black">
                                         <span className="text-[#FB5711]">Krivisio</span> — All-in-One AI Execution Platform
                                     </h3>
                                     {/* <div className="mt-15">
@@ -115,7 +116,7 @@ export default function Pricing() {
                                         </div>
                                         <p className="text-[10px] text-gray-300">Cut costs by 3x. Move 5× faster.</p>
                                     </div> */}
-                                    <div className="space-y-3 text-sm text-black dark:text-white mt-6 ml-6">
+                                    <div className="space-y-3 text-sm text-black dark:text-white mt-6 lg:ml-10 ml-3">
                                         <div className="flex items-start gap-2">
                                             <Check className="text-green-600 w-4 h-4 mt-0.5" />
                                             <p>
@@ -146,9 +147,9 @@ export default function Pricing() {
                                     </div>
                                 </div>
 
-                                <div className="flex-1 px-5 mt-6 text-black">
+                                <div className="flex-1 px-5 lg:mt-6 mt-3 lg:ml-4 text-black">
                                     <h4 className="font-semibold mb-4 text-center">Includes</h4>
-                                    <div className="grid grid-cols-2 gap-3 gap-x-10 text-sm">
+                                    <div className="grid grid-cols-2 lg:gap-3 gap-2 lg:gap-x-8 gap-x-5 text-sm">
                                         {[
                                             "Planning + Tasking",
                                             "Sprint + Timeline creation",
@@ -157,15 +158,15 @@ export default function Pricing() {
                                             "AI-powered base code generation",
                                             "Internal compliance & more",
                                         ].map((text, i) => (
-                                            <div key={i} className="flex items-center gap-2">
-                                                <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
+                                            <div key={i} className="flex items-center lg:text-base text-[10px] lg:gap-2 gap-1">
+                                                <div className="lg:w-1.5 lg:h-1.5 w-1 h-1 bg-black rounded-full"></div>
                                                 <span>{text}</span>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
 
-                                <span className="text-black text-center mt-10">Krivisio does it all in one fraction of the cost</span>
+                                <span className="text-black lg:text-base text-sm text-center lg:mt-10 mt-5">Krivisio does it all in one fraction of the cost</span>
 
                                 <div className="mt-6 text-center">
                                     <Button className="bg-[#FB5711] hover:bg-orange-600 text-white px-6 py-4 font-semibold rounded-sm">

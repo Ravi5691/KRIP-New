@@ -88,13 +88,13 @@ export default function AboutUs() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col place-items-center justify-center min-h-screen px-6 md:px-20 py-10 my-8 mt-5"
+      className="flex flex-col place-items-center justify-center lg:min-h-screen px-5 md:px-20 lg:py-10 lg:my-8 lg:mt-5"
     >
-      <Image ref={imageRef} src="/LandingPage/aboutus.svg" alt="Krivisio logo" width={418} height={124} />
+      <Image ref={imageRef} src="/LandingPage/aboutus.svg" alt="Krivisio logo" width={418} height={124} className="w-[165px] h-[50px] lg:w-[418px] lg:h-[124px]" />
 
       <div
         ref={textRef}
-        className={`text-center ${inter.className} text-[32px] sm:text-[40px] md:text-[56px] mt-20 leading-tight`}
+        className={`text-center ${inter.className} text-[24px] sm:text-[40px] md:text-[56px] mt-20 leading-tight`}
       >
         Krip is an{" "}
         <span className={`${sacramento.className} text-[#FB5711]`}>

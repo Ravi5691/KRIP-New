@@ -305,7 +305,7 @@ export default function ProjectAnalysis() {
   return (
     <div
       ref={sectionRef}
-      className="mx-auto px-20 min-h-screen flex flex-col justify-center items-center mt-35 mb-30"
+      className="mx-auto px-20 lg:min-h-screen lg:flex hidden flex-col justify-center items-center mt-35 mb-30"
     >
       {/* Top SVG */}
       <Image
@@ -332,24 +332,24 @@ export default function ProjectAnalysis() {
               <Card
                 key={project.id}
                 className={`cursor-pointer transition-all duration-300 hover:shadow-md ${activeProject === project.id
-                    ? "bg-gradient-to-b from-[#F9A629] to-[#f9a6298d] text-white shadow-lg"
-                    : "bg-white border-gray-200 hover:border-gray-300"
+                  ? "bg-gradient-to-b from-[#F9A629] to-[#f9a6298d] text-white shadow-lg"
+                  : "bg-white border-gray-200 hover:border-gray-300"
                   }`}
                 onClick={() => setActiveProject(project.id)}
               >
                 <CardContent className="p-6 text-center">
                   <div
                     className={`text-2xl font-bold mb-2 ${activeProject === project.id
-                        ? "text-white"
-                        : "text-gray-400"
+                      ? "text-white"
+                      : "text-gray-400"
                       }`}
                   >
                     {project.id.toString().padStart(2, "0")}
                   </div>
                   <div
                     className={`text-[12px] font-medium ${activeProject === project.id
-                        ? "text-white"
-                        : "text-gray-700"
+                      ? "text-white"
+                      : "text-gray-700"
                       }`}
                   >
                     {project.title}
