@@ -23,7 +23,7 @@ const oldSchoolProblems = [
   {
     title: "No Context For AI",
     description:
-      "Generic AI tools don't remember what was planned, why it was planned, or how it connects across the stack. You start from scratch every time.",
+      "Generic AI tools don&apos;t remember what was planned, why it was planned, or how it connects across the stack. You start from scratch every time.",
   },
 ]
 
@@ -39,7 +39,7 @@ const krivisioFeatures = [
   {
     title: "Context-Aware LLMs",
     description:
-      "Krivisio remembers your project's history, goals, and team structure — powering smarter, more relevant tasking and planning with every new input.",
+      "Krivisio remembers your project&apos;s history, goals, and team structure — powering smarter, more relevant tasking and planning with every new input.",
   },
 ]
 
@@ -49,43 +49,41 @@ export default function Pricing() {
   const rightCardRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<HTMLDivElement>(null)
 
-  // Mobile state
   const [activeTab, setActiveTab] = useState<"others" | "krivisio">("krivisio")
   const highlightRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
-  // GSAP animations
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Desktop animations
-      gsap.from(svgRef.current, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: svgRef.current,
-          start: "top 80%",
-        },
-      })
-
-      gsap.from([leftCardRef.current, rightCardRef.current], {
-        opacity: 0,
-        y: 50,
-        duration: 1.2,
-        delay: 0.3,
-        stagger: 0.2,
-        ease: "power3.out",
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 80%",
+          once: true,
         },
       })
+
+      tl.from(svgRef.current, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: "power3.out",
+      }).from(
+        [leftCardRef.current, rightCardRef.current],
+        {
+          opacity: 0,
+          y: 50,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+        },
+        "-=0.3"
+      )
     }, containerRef)
 
     return () => ctx.revert()
   }, [])
 
-  // Mobile highlight animation
   useEffect(() => {
     if (highlightRef.current) {
       gsap.to(highlightRef.current, {
@@ -118,11 +116,11 @@ export default function Pricing() {
           </Badge>
         </div>
         <h2 className=" text-[18px] lg:md:text-3xl font-bold text-gray-900 mb-4">
-          Still Building Projects Like It's 2015?
+          Still Building Projects Like It&apos;s 2015?
         </h2>
         <p className="text-gray-600 text-sm leading-relaxed">
           Traditional tools trap teams in a loop - planning on Notion, assigning in Jira, coordinating on Slack, and
-          losing clarity. You're operating plainly. No effort for 1x output.
+          losing clarity. You&apos;re operating plainly. No effort for 1x output.
         </p>
       </div>
 
@@ -142,8 +140,8 @@ export default function Pricing() {
 
       <div className="lg:mt-8 mt-2 p-4 bg-red-50 border-l-4 border-red-200 rounded-r-lg">
         <p className="lg:text-sm text-[12px] text-gray-700 italic mb-2">
-          "We'd plan in Notion, assign in Jira, chat on Slack, then lose context while using claude and cursor — and
-          still wonder why nothing was moving."
+          &quot;We&apos;d plan in Notion, assign in Jira, chat on Slack, then lose context while using claude and cursor — and
+          still wonder why nothing was moving.&quot;
         </p>
         <p className="text-xs text-gray-500">— Frustrated Product Manager, Early-Stage SaaS</p>
       </div>
@@ -162,7 +160,7 @@ export default function Pricing() {
         <h2 className="text-[18px] md:text-3xl font-bold mb-4">100x Execution Transformation</h2>
         <p className="text-gray-300 text-sm leading-relaxed">
           Krivisio is an AI-first execution engine – turning messy project inputs into structured action. From planning
-          to ownership to code scaffolds — it's all automatic.
+          to ownership to code scaffolds — it&apos;s all automatic.
         </p>
       </div>
 
@@ -182,8 +180,8 @@ export default function Pricing() {
 
       <div className="lg:mt-8 mt-2 p-4 bg-green-900/30 border-l-4 border-green-400 rounded-r-lg">
         <p className="lg:text-sm text-[12px] text-gray-200 italic mb-2">
-          "We dropped a rough brief, and Krivisio turned it into sprint tasks with owners automatically signed in 5
-          minutes. We've never shipped faster."
+          &quot;We dropped a rough brief, and Krivisio turned it into sprint tasks with owners automatically signed in 5
+          minutes. We&apos;ve never shipped faster.&quot;
         </p>
         <p className="text-xs text-gray-400">— Founding Engineer, Series A Startup</p>
       </div>
@@ -199,20 +197,19 @@ export default function Pricing() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-7xl place-items-stretch mx-auto mt-10">
-          <div ref={leftCardRef} className="h-full">{renderOthersCard()}</div>
-          <div ref={rightCardRef} className="h-full">{renderKrivisioCard()}</div>
+          <div className="h-full">{renderOthersCard()}</div>
+          <div className="h-full">{renderKrivisioCard()}</div>
         </div>
       </div>
 
       {/* Mobile View */}
       <div className="lg:hidden w-full max-w-lg mx-auto">
 
-        <div ref={svgRef} className="flex justify-center">
+        <div className="flex justify-center">
           <Image src="/LandingPage/vs.svg" alt="Krivisio logo" width={309} height={50} className="mb-10" />
         </div>
-        {/* Switch Buttons */}
-        <div ref={svgRef} className="relative flex w-full bg-[#7878801F] rounded-lg overflow-hidden p-[2px]">
-          {/* Highlight BG */}
+
+        <div className="relative flex w-full bg-[#7878801F] rounded-lg overflow-hidden p-[2px]">
           <div
             ref={highlightRef}
             className="absolute top-0 left-0 w-1/2 h-full bg-[#161C28] rounded-lg border-4"
@@ -220,22 +217,19 @@ export default function Pricing() {
           ></div>
 
           <button
-            className={`flex-1 py-3 text-[13px] font-semibold relative z-10 ${activeTab === "krivisio" ? "text-[#FB5711]" : "text-gray-700"
-              }`}
+            className={`flex-1 py-3 text-[13px] font-semibold relative z-10 ${activeTab === "krivisio" ? "text-[#FB5711]" : "text-gray-700"}`}
             onClick={() => setActiveTab("krivisio")}
           >
             Krivisio
           </button>
           <button
-            className={`flex-1 py-3 text-[13px] font-semibold relative z-10 ${activeTab === "others" ? "text-white" : "text-gray-700"
-              }`}
+            className={`flex-1 py-3 text-[13px] font-semibold relative z-10 ${activeTab === "others" ? "text-white" : "text-gray-700"}`}
             onClick={() => setActiveTab("others")}
           >
             Others
           </button>
         </div>
 
-        {/* Tab Content */}
         <div ref={contentRef} className="mt-6">
           {activeTab === "krivisio" ? renderKrivisioCard() : renderOthersCard()}
         </div>
